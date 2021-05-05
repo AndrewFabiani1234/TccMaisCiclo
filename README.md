@@ -2,7 +2,7 @@
 
 Status: Em Desenvolvimento ⚠️
 
-## O projeto se divide em duas coisas :
+## O projeto se divide em duas aplicações:
 
 ## <p align=center>Web Site</p>
 Tela Home
