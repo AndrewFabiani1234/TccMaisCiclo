@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="sortcut icon" href="IMAGES/imgWeb2.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Administrativa</title>
+    <style type="text/css">
+   
+
+    *{
+        font-size: 15px;
+    }
+
+
+    /* #graficoBikes, #tituloBike  {
+
+       
+        position: relative;
+
+
+     }
+     #graficoEstacoes{
+        width: 40%;
+        position: relative;
+        
+        margin-left: 30%; 
+        
+     } */
+
+    #graficoBikes {
+        width: 40%;
+       
+
+     }
+
+     #graficoEstacoes{
+        
+        width: 40%;
+     }
+     
+    
+       
+    
+
+
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <script>
+
+        google.charts.load('current', {'packages':['corechart']});
+
+        //Grafico BIKES
+        function desenharBikes (){
+
+            var tabelaBikes = new google.visualization.DataTable();
+            tabelaBikes.addColumn('string','descricao');
+            tabelaBikes.addColumn('number','valores');
+            tabelaBikes.addRows([
+
+                ['Em funcionamento',55],
+                ['Em manutenção', 28],
+                ['Solicitações de manutenção', 12]
+                
+            ]);
+
+            var graficoBikes = new google.visualization.PieChart(document.getElementById('graficoBikes'));
+            graficoBikes.draw(tabelaBikes);
+    }
+
+    google.charts.setOnLoadCallback(desenharBikes);
+
+
+    //GRAFICO ESTAÇÕES
+    function desenharEstacoes (){
+
+        var tabelaEstacoes = new google.visualization.DataTable();
+            tabelaEstacoes.addColumn('string', 'descricao');
+            tabelaEstacoes.addColumn('number','valores');
+            tabelaEstacoes.addRows([
+
+                ['Em funcioanmento', 08],
+                ['Solicitações de manutenção', 02] 
+            ]);
+
+            var graficoEstacoes = new google.visualization.PieChart(document.getElementById('graficoEstacoes'));
+            graficoEstacoes.draw(tabelaEstacoes);
+
+
+    }
+
+    google.charts.setOnLoadCallback(desenharEstacoes);
+    </script>
+
+</head>
+<body>
+    
+    <div id="caixa01">
+        <div id="graficoBikes"></div>
+        <div id="graficoEstacoes"></div>
+    </div>
+    <!-- <div id="tituloEstacoes">
+        <h3>ESTAÇÕES</h3>
+        <div id="graficoEstacoes"></div>
+    </div> -->
+    
+
+    <br><br><br><br><br>
+    
+
+    <table>
+        <tr>
+            <td width="4%"><img src="../IMAGES/iconeUsuario.png" alt="icone de usuarios" width="80%"></td>
+            <td>157 Cadastros</td>
+            <td width="4%"><img src="../IMAGES/iconeCelular.png" alt="icone tempo médio" width="80%"></td>
+            <td>Tempo médio de utilização por usuarios: 1,4h</td>
+        </tr>
+        <tr>
+            <td width="4%"><img src="../IMAGES/iconeBike.png" alt="icone bike" width="80%"></td>
+            <td>213 Locações</td>
+            <td width="4%"><img src="../IMAGES/iconeAvaliacao.png" alt="Icone Avaliações" width="80%"></td>
+            <td>122 Avaliações</td>
+        </tr>
+        <tr>
+            <td width="4%"><img src="IMAGES/iconeVelocimetro.png" alt="Icone de media de quilometros percorridos" width="80%"></td>
+            <td>85,4KM percorridos</td>
+        </tr>
+    </table>
+
+</body>
+</html>
