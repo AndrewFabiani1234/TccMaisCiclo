@@ -12,7 +12,7 @@ const min = date.getMinutes();
 app.use(morgan("combined"));
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'views')));
 /*
 app.get("/", (req, res) => {
     res.sendFile(__dirname+"/views/homeCiclo.html");
