@@ -1,10 +1,13 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 
 const date = new Date();
 const hora = date.getHours();
 const min = date.getMinutes();
 
+app.use(express.static(path.join(__dirname, 'views'));
+/*
 app.get("/", (req, res) => {
     res.sendFile(__dirname+"/views/homeCiclo.html");
 });
@@ -28,6 +31,7 @@ app.get("/vagas", (req, res) => {
 app.get("/admin", (req, res) => {
     res.sendFile(__dirname+"/views/admin.html");
 });
+*/
 
 app.listen(3000, (req, res) => {
     console.log("Servidor rodado as "+(hora<10? "0"+hora : hora)+":"+ (min<10? "0"+min : min)+" na porta 3000");
